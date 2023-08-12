@@ -3,19 +3,35 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
+namespace Ui
 {
-    Q_OBJECT
-
+  class MainWindow;
+}
+ class MainWindow : public QMainWindow
+{
+     Q_OBJECT
 public:
-    MainWindow(QWidget *parent = nullptr);
+     MainWindow(QWidget * parent = nullptr);
     ~MainWindow();
+
+ private slots:
+
+    void onNew();
+
+    void onOpen();
+
+    void onSave();
 
 private:
     Ui::MainWindow *ui;
-};
+
+    QAction *newAction;
+    QAction *openAction;
+    QAction *saveAction;
+
+
+    QtexEdit *textEdit;
+
+ };
+
 #endif // MAINWINDOW_H
