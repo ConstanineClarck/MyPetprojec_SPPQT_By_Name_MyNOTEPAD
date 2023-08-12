@@ -1,26 +1,47 @@
-
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QTextEdit>
-#include <QFileDialog>
-#include <QFile>
-#include <QTextStream>
+
+#include <QtWidgets>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
-    QTextEdit *textEdit = new QTextEdit(this);
 
+
+    textEdit = new QTextEit;
     setCentralWidget(textEdit);
 
+    QMenuBar *menuBar = new QMenuBar(this);
+
+    QMenu *fileMenu = menuBar->addMenu("FIle");
+
+    newAction = new QAction("New", this);
+    fileMenu->addAction(newAction);
+    connect(newAction, &QAction::triggered, this, &MainWindow::onNew);
+
+    QToolBar *toolBar = addToolBar("Toolbar");
+    toolBar->addAction(newAction);
+
+    setWindowTitle("Uninstal");
+
 }
 
-
-MainWindow::~MainWindow()
+void MaiWindow::onNew()
 {
-    delete ui;
+
+    textEdit->clear();
+
+    setWindowTitle("Untitled");
 }
+
+void MainWIndow::onOpen()
+{    }
+void MainWindo::onSave()
+{    }
+
+
 
