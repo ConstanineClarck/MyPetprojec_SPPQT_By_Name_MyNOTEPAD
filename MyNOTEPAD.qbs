@@ -14,7 +14,7 @@ QtApplication {
         "mainwindow.cpp",
         "mainwindow.h",
         "mainwindow.ui",
-        "MyNOTEPAD_prg_001.ts",
+        "MyNOTEPAD_v_1_0_ru_RU.ts",
     ]
 
     Group {
