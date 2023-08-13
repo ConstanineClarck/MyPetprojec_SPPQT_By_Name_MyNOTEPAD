@@ -14,7 +14,14 @@
                         3) Выберите "Qt" в качестве типа проекта и выберите "Обычный проект"
                         4) Дайте вашему проекту имя, любое, типа myproject
                         5) Qt Creator создаст файл myproject.pro, откройте этот файл и информацию о базовой конфигурации:
-                        
+                                                 TEMPLATE = app
+                                                 QT += widgets
+                                                 SOURCES += main.cpp\
+                                                      mainwindow.cpp
+                                                 HEADERS +=
+                                                 mainwindow.h
+                                                 FORMS +=
+                                                 mainwindow.ui
                         
                                                                 
       
