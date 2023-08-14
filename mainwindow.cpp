@@ -4,7 +4,7 @@
 #include <QtWidgets>
 
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent)   // Конструктор класса MainWindow, который получает на вход параметр виджет родительского класса QmainWindow, все виджиты в иерархии Qt принимать в своём конструкторе параметр родительского виджита
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 
