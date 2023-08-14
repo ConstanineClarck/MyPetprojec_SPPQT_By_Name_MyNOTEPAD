@@ -40,9 +40,28 @@ void MaiWindow::onNew()               // Слот обработки созда�
 }                                     // Слот onNew() вызывается при действии "Новый документ", что бы очистить документ, сбросить заголовок и настроить новый файл
 
 void MainWIndow::onOpen()
-{    }
+{
+    QString filePath = QFileDialog::getOpenFileName(this);
+    
+    QFile file(filePath);
+    if(file.open(QFile::ReadOnly))
+    {
+        QByteArray text = file.readAll();
+        textEdit->setText(text);
+        setWindowTitle(filePath);
+    }
+}
 void MainWindo::onSave()
-{    }
+{
+    QString text = textEdit->toPlainText();
+    
+    QFile file(fileName);
+    if(file.open(QFile::WriteOnly))
+    {
+        file.write(text);
+        setWindowTitle(fileName);
+    }
+}
 
 
 
