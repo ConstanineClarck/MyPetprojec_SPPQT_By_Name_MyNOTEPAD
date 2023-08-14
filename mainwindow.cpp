@@ -58,8 +58,8 @@ void MainWindo::onSave()                                   // Слот для о
 {
     QString text = textEdit->toPlainText();                // Получить содержимое редактирования текста???
     
-    QFile file(fileName);                                  // 
-    if(file.open(QFile::WriteOnly))
+    QFile file(fileName);                                  // Открываем файл для записи
+    if(file.open(QFile::WriteOnly))                        
     {
         file.write(text.toUtf8());
         setWindowTitle(fileName);
