@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
     ui->setupUi(this);                    // Этот указатель пользовательского интерфейса предоставляет доступ ко всем элементам интерфейса, cвязывает форму пользовательского интерфейса с фактическим экземпляром MainWindow
 
 
-    textEdit = new QTextEit;              // 
+    textEdit = new QTextEit;              //  
     setCentralWidget(textEdit);
 
     QMenuBar *menuBar = new QMenuBar(this);
