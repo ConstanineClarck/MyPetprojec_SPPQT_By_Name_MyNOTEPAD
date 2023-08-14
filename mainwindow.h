@@ -4,7 +4,7 @@
 #include <QMainWindow> // Объявление класса для MainWindow наследуется от QMainWindow, может расширять функциальность QMainWindow
                        // MinWindow может переопределять виртуальные методы QMainWindow, объекты MainWindow могут служить указателями на QMainWindow!!!
 
-namespace Ui           
+namespace Ui           // Объявляем пространство имён пользовательского интерфейса и класс MainWindow, сгенерированый с помощью uic из файла mainwindow.ui, позволяет получиь доступ к элементам пользовательского интерфейса в коде
 {
   class MainWindow;
 }
