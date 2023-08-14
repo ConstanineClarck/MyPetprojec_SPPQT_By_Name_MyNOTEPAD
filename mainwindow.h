@@ -24,7 +24,7 @@ public:
     void onSave();      // Сохранение текущего документа, при реализации получаем текст из QTextEdit, открываем файл для записи по средством QFile! 
                         // Так же может запрашивать имя файл, если это новый несохранённый файл
 private:
-    Ui::MainWindow *ui; 
+    Ui::MainWindow *ui; //
 
     QAction *newAction;
     QAction *openAction;
