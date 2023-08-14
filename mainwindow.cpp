@@ -41,26 +41,34 @@ void MaiWindow::onNew()               // Слот обработки созда�
 
 void MainWIndow::onOpen()
 {
-    QString filePath = QFileDialog::getOpenFileName(this);
+    QString filePath = QFileDialog::getOpenFileName(this); // Показывает диалог открытия файла для выбора файла
     
-    QFile file(filePath);
-    if(file.open(QFile::ReadOnly))
+    QFile file(filePath);                                  // Создаём объект типа файл
+    if(file.open(QFile::ReadOnly))                         //
     {
-        QByteArray text = file.readAll();
-        textEdit->setText(text);
-        setWindowTitle(filePath);
+        QByteArray text = file.readAll();                  // ЧИтаем сожержимое в массив байтов?
+        textEdit->setText(text);                           // Установить содержимое для редактирования текста?
+        setWindowTitle(filePath);                          // Помещаем заголовок окна в имя файла
     }
+    else
+    {
+        QMessageBox::warning(this, "ОШИБКА! Не удалось открыть файл!");   // Выводит сообщение об ошибке, файл был открыт с ошибкой
 }
-void MainWindo::onSave()
+void MainWindo::onSave()                                   // Слот для обработки сохранения текущего файла
 {
-    QString text = textEdit->toPlainText();
+    QString text = textEdit->toPlainText();                // Получить содержимое редактирования текста???
     
-    QFile file(fileName);
+    QFile file(fileName);                                  // 
     if(file.open(QFile::WriteOnly))
     {
-        file.write(text);
+        file.write(text.toUtf8());
         setWindowTitle(fileName);
     }
+    else
+    {
+        QMessageBox::warning(this, "Ошибка", "Не удалось сохранить файл");
+    }
+
 }
 
 
