@@ -5,11 +5,11 @@
 
 
 MainWindow::MainWindow(QWidget *parent)   // Конструктор класса MainWindow, который получает на вход параметр виджет родительского класса QmainWindow, все виджиты в иерархии Qt принимать в своём конструкторе параметр родительского виджита
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent)                 
+    , ui(new Ui::MainWindow)              // Создаём новый класс пользовательского интерфейса MainWindow в пространстве имён Ui, созданный инструментом uic от Qt
 
 {
-    ui->setupUi(this);
+    ui->setupUi(this);                    // Этот указатель пользовательского интерфейса предоставляет доступ ко всем элементам интерфейса, таким как кнопки, например и подобным
 
 
     textEdit = new QTextEit;
