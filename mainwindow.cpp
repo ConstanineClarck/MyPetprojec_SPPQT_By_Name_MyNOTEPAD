@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
     QMenu *fileMenu = menuBar->addMenu("FIle");   // Создаём новый объект QMenu и добавляем его в панель меню с заголовком Fail, посредством addMenu("FIle"), возвращаемый указатель типа QMenu передаём в failMenu 
 
     newAction = new QAction("New", this);         // QAction - это класс Qt для действий, которые можно добавлять к виджетам, таким образом мы создаём новое действие с текстом "New", указатель this делвет MainWIndow родителем этого действия, о етсь свзяывает время жизни объекта типа QAction c окном! Вкладка Текст->"Новый" появится в меню инструментов  
-    fileMenu->addAction(newAction);
+    fileMenu->addAction(newAction);               // Помещаем возможность создать "Новый документ" и нажать на него в меню, за счёт добавления указателя типа QAction в меню через метод занося его значение в переменную указатель типа fileMenu
     connect(newAction, &QAction::triggered, this, &MainWindow::onNew);
 
     QToolBar *toolBar = addToolBar("Toolbar");
