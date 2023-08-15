@@ -59,9 +59,9 @@ void MainWindo::onSave()                                   // Слот для о
     QString text = textEdit->toPlainText();                // Получить содержимое редактирования текста???
     
     QFile file(fileName);                                  // Открываем файл для записи
-    if(file.open(QFile::WriteOnly))                        
+    if(file.open(QFile::WriteOnly))                        // Проверяет на то открыт ли документ только на запись, через вызов дочернего WriteOnly метода из родительского QFile
     {
-        file.write(text.toUtf8());
+        file.write(text.toUtf8());                         // Объект text это QSTring, содержащая текст для записи, а метод toUtf8() преобразует текст QString в массив байтов типа QByteArray закодированный в utf-8 для юникод символов, write() записываетпреобразованный массив байтов utf-8 в файл
         setWindowTitle(fileName);
     }
     else
