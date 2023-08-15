@@ -15,11 +15,11 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
     textEdit = new QTextEit;              // Динамически размещает объект типа QTextEdit в стеке, что позволяет ему иметь время жизни, не привязанное к конструктору, textEdit действует как дискриптор для доступа к экземпляру QTextEdit, это позволяет окнам управлять дочерним объектом
     setCentralWidget(textEdit);           // По умолчанию центральный виджет представляе из себя пустой QWidget, метод setCentralWidget(textEdit) - принимает указатель textEdit типа QTextEdit, который наследуется от QWidget, то есть вызов данной функции заменяет центральный пустой по умолчанию виджет на QTextEdit, что бы форма редактировани текста заняла большу часть окна по центру 
 
-    QMenuBar *menuBar = new QMenuBar(this);
+    QMenuBar *menuBar = new QMenuBar(this);   // Динамически выделяет объъект виджиьа QMenuBar и назначает его указателю *menuBar, мы передаём указатель this в MainWindow в качестве родителя, сам menuBar как дочерний элемент MainWindow указывает на созданное меню  
 
-    QMenu *fileMenu = menuBar->addMenu("FIle");
+    QMenu *fileMenu = menuBar->addMenu("FIle");   // Создаём новый объект QMenu и добавляем его в панель меню с заголовком Fail, посредством addMenu("FIle"), возвращаемый указатель типа QMenu передаём в failMenu 
 
-    newAction = new QAction("New", this);
+    newAction = new QAction("New", this);         // QAction - это класс Qt для действий, которые можно добавлять к виджетам, таким образом мы создаём новое действие с текстом "New", указатель this делвет MainWIndow родителем этого действия, о етсь свзяывает время жизни объекта типа QAction c окном! Вкладка Текст->"Новый" появится в меню инструментов  
     fileMenu->addAction(newAction);
     connect(newAction, &QAction::triggered, this, &MainWindow::onNew);
 
