@@ -62,7 +62,7 @@ void MainWindo::onSave()                                   // Слот для о
     if(file.open(QFile::WriteOnly))                        // Проверяет на то открыт ли документ только на запись, через вызов дочернего WriteOnly метода из родительского QFile
     {
         file.write(text.toUtf8());                         // Объект text это QSTring, содержащая текст для записи, а метод toUtf8() преобразует текст QString в массив байтов типа QByteArray закодированный в utf-8 для юникод символов, write() записываетпреобразованный массив байтов utf-8 в файл
-        setWindowTitle(fileName);
+        setWindowTitle(fileName);                          // Устанавливает название для главного окна которое мы указываем для сохранения
     }
     else
     {
