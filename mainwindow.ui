@@ -1,6 +1,8 @@
 <?xml version="1.0"encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
+
+<!-- Главное приложение окна -->
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
@@ -14,8 +16,12 @@
    <string>Notepad</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
+
+<!-- Шаблон для меню -->
   <widget class="QMenuBar" name="menuBar"/>
   <widget class="QToolBar" name="mainToolBar"/>
+
+<!-- Центральный виджет для ввода текста -->
   <widget class="QTextEdit" name="textEdit"/>
  </widget>
  <layoutdefult spacing="6" margin="11"/>
