@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
 
     newAction = new QAction("New", this);         // QAction - это класс Qt для действий, которые можно добавлять к виджетам, таким образом мы создаём новое действие с текстом "New", указатель this делвет MainWIndow родителем этого действия, о етсь свзяывает время жизни объекта типа QAction c окном! Вкладка Текст->"Новый" появится в меню инструментов  
     fileMenu->addAction(newAction);               // Помещаем возможность создать "Новый документ" и нажать на него в меню, за счёт добавления указателя типа QAction в меню через метод занося его значение в переменную указатель типа fileMenu
-    connect(newAction, &QAction::triggered, this, &MainWindow::onNew);   //
+    connect(newAction, &QAction::triggered, this, &MainWindow::onNew);   //  Соединяем сигнал triggered() от QAction для пользования им через newAction со слотом onNew() в классе MainWindow! Это позволяет вызвать слот onNew() при запуске newAction, newAction - это указатель на QAction, который генерирует сигнал, а &QAction::triggered - определет сигнал triggered() из класса QAction, &MainWindow - определяет функцию слота onNew(), по этому, когда newAction активирован (например выбранно меню), он выдаёт сигнал triggered()
 
     QToolBar *toolBar = addToolBar("Toolbar");
     toolBar->addAction(newAction);
