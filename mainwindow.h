@@ -1,5 +1,5 @@
 #ifndef MAINWINDOW_H   // Защита включения, проверяет истина ли макроопределение MAINWINDOW_H гаранирует наам, что класс  MainWIndow уже был определён один раз, что бы нам не определить его второй раз
-#define MAINWINDOW_H   // Объявление макроса для проверки ifndef выше
+#define MAINWINDOW_H   // Объявление макроса для проверки ifndef выше 
 
 #include <QMainWindow> // Объявление класса для MainWindow наследуется от QMainWindow, может расширять функциальность QMainWindow
                        // MinWindow может переопределять виртуальные методы QMainWindow, объекты MainWindow могут служить указателями на QMainWindow!!!
