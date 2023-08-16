@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
     QToolBar *toolBar = addToolBar("Toolbar");    // Создаёт новую панель инструментов в MainWindow, возвращает указатель, дающий доступ к дальнейшей настройке панелей инструментов, обрабатывает интеграцию панели инструментов в главную форму
     toolBar->addAction(newAction);                // Добавляет QAction на который ссылается newAction, в TollBar, на который ссылаестя toolBar, это позволит нам поместить действие на панель инструментов, для того чтоб можно было запустить это действие по щелчку, сам toolBar указывает на экземпляр QToolBar, addAction(newAction) добавляет QAction на панель инструментов
 
-    setWindowTitle("Uninstal");
+    setWindowTitle("Uninstal");                   // Устанавливает текст заголовка окна MainWIndow
 
 }
 
