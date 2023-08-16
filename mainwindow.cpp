@@ -44,7 +44,7 @@ void MainWIndow::onOpen()
     QString filePath = QFileDialog::getOpenFileName(this); // Показывает диалог открытия файла для выбора файла
     
     QFile file(filePath);                                  // Создаём объект типа файл
-    if(file.open(QFile::ReadOnly))                         //
+    if(file.open(QFile::ReadOnly))                         // file является экземпляром QFile и предоставляет файл на диске, open() открывает файл с флагами поставленными в режим открытия, QFile::ReadOnly открывает файл только для чтения, предотвращая запись и возвращает true если файл был успешно открыт
     {
         QByteArray text = file.readAll();                  // ЧИтаем сожержимое в массив байтов?
         textEdit->setText(text);                           // Установить содержимое для редактирования текста?
