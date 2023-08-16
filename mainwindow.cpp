@@ -23,8 +23,8 @@ MainWindow::MainWindow(QWidget *parent)   // Конструктор класса
     fileMenu->addAction(newAction);               // Помещаем возможность создать "Новый документ" и нажать на него в меню, за счёт добавления указателя типа QAction в меню через метод занося его значение в переменную указатель типа fileMenu
     connect(newAction, &QAction::triggered, this, &MainWindow::onNew);   //  Соединяем сигнал triggered() от QAction для пользования им через newAction со слотом onNew() в классе MainWindow! Это позволяет вызвать слот onNew() при запуске newAction, newAction - это указатель на QAction, который генерирует сигнал, а &QAction::triggered - определет сигнал triggered() из класса QAction, &MainWindow - определяет функцию слота onNew(), по этому, когда newAction активирован (например выбранно меню), он выдаёт сигнал triggered()
 
-    QToolBar *toolBar = addToolBar("Toolbar");
-    toolBar->addAction(newAction);
+    QToolBar *toolBar = addToolBar("Toolbar");    // Создаёт новую панель инструментов в MainWindow, возвращает указатель, дающий доступ к дальнейшей настройке панелей инструментов, обрабатывает интеграцию панели инструментов в главную форму
+    toolBar->addAction(newAction);                // Добавляет QAction на который ссылается newAction, в TollBar, на который ссылаестя toolBar, это позволит нам поместить действие на панель инструментов, для того чтоб можно было запустить это действие по щелчку, сам toolBar указывает на экземпляр QToolBar, addAction(newAction) добавляет QAction на панель инструментов
 
     setWindowTitle("Uninstal");
 
